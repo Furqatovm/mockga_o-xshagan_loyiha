@@ -20,7 +20,11 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
 
+}
+.wrapper-main{
+    background-color: #ffd166;
 }
 
 h1{
@@ -111,6 +115,10 @@ header{
     padding-top: 20px;
     text-shadow: 2px 4px 10px black;
 }
+h1{
+    color: white;
+    text-shadow: 2px 3px 10px black;
+}
 #footer-button{
     padding: 20px 60px;
     border: none;
@@ -120,6 +128,19 @@ header{
     color: white;
     cursor: pointer;
 
+}
+.btn-previes{
+    background-color: blue;
+    padding: 15px 30px;
+}
+.javob-label{
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
 }
 footer{
     display: flex;

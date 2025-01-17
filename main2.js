@@ -43,6 +43,7 @@ let keyingi =document.getElementById("keyingi");
 let savolIndex =0;
 let togriJavob = 0;
 
+
 function showQuestion () {
     savol.innerHTML =savollar[savolIndex].savol;
 
@@ -54,22 +55,26 @@ function showQuestion () {
 
         // label.innerHTML =savollar[savolIndex].javoblar[i];
             let input =document.createElement("input");
-            input.type ="radio";            
+            input.type ="radio"; 
+                      
 
             input.name ="javob";
             input.value =i;
             input.id =`javob${i}`;
 
+            let oldingi =document.createElement("button");
+            oldingi.className ="btn-previes";
             let span =document.createElement("span");
             span.className ="javob-span";
             span.textContent =savollar[savolIndex].javoblar[i];
             
 
 
-
+            
             javoblar.appendChild(label);
             label.appendChild(input);
             label.appendChild(span);
+            
     }
     
 
@@ -85,6 +90,7 @@ function nextQuestion (){
         alert("iltimos javobni belgilang");
         return;
     }
+    
 }
 
 showQuestion();
