@@ -81,6 +81,8 @@ function showQuestion () {
 }
 
 function nextQuestion (){
+    let oldingi =document.createElement("button");
+
     let userAnswer = document.querySelector("input[name=javob]:checked");
     if (userAnswer){
         javoblar.innerHTML ="";
@@ -89,11 +91,40 @@ function nextQuestion (){
     } else {
         alert("iltimos javobni belgilang");
         return;
-    }
+    } 
+
     
 }
 
+function CheckAnswers (javobindex) {
+if (+javobindex === savollar[savolIndex].togriJavob) {
+    togriJavob++;
+    score.innerHTML =togriJavob;
+} 
+savolIndex++;
+if (savolIndex < savollar.length) {
+    showQuestion()
+} else {
+    ShowResult();
+}
+
+}
+    function ShowResult () {
+        savol.innerHTML =`siz ${savollar.length} ta savoldan ${togriJavob} tasiga to'g'ri`;
+        javoblar.innerHTML ="";
+    }
+
+    function restart() {
+        savolIndex =0;
+        togriJavob =0;
+        score.innerHTML =0;
+        javoblar.innerHTML ="";
+        showQuestion();
+    }
+
+
 showQuestion();
+restartBtn.addEventListener("click", restart);
 
 keyingi.addEventListener("click", nextQuestion);
 
@@ -107,3 +138,14 @@ tugma.addEventListener("click", function (){
     footer.style.display ="none";
     hero.style.display ="block"
 })
+
+let start =document.getElementById("boshlash");
+let quiz =document.getElementById("quiz");
+quiz.style.display ="none"
+
+start.addEventListener("click", function(){
+    start.style.display ="none";
+    quiz.style.display ="block";
+})
+
+
